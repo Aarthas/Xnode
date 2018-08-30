@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.a.MutableLiveData;
+
 import java.util.HashMap;
 
 import xjsonview.Utils;
@@ -28,9 +30,17 @@ public abstract class BseViewComponent {
         }
 
     }
+
     public LayoutInflater getLayoutInflater(Context context) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         return inflater;
     }
 
+    public void emitValue(View view, MutableLiveData<String> livedata) {
+
+    }
+
+    public void applyValue(View view, MutableLiveData<String> livedata) {
+
+    }
 }

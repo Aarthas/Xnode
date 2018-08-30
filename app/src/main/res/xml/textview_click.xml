@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <verticlelayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="#888235">
-    <mytitlebar titleText="model.ti"></mytitlebar>
-    <mytitlebar titleText="model.aaa"></mytitlebar>
+    <mytitlebar titleText="model.ti"  ref="mytitlebar"></mytitlebar>
 </verticlelayout>

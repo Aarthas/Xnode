@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<verticlelayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#f6f6f6">
+    <mytitlebar
+        ref="mytitlebar"
+        click="aaaa"
+        titleText="asdasdas"></mytitlebar>
+
+    <TextView
+        bind-text="text1"
+        color="#f03838"
+        ref="simple"
+        width="match"
+        android:background="#fff"
+        android:paddingLeft="22dp"></TextView>
+
+    <EditText
+        color="#f03838"
+        hint="asd"
+        data="edittext"
+        width="match"></EditText>
+
+    <!--<import form="./textview.xml"></import>-->
+</verticlelayout>

@@ -10,8 +10,6 @@ import android.view.ViewGroup;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-import xjsonview.bean.XViewBase;
-import xjsonview.bean.XViewBody;
 
 /**
  * Created by Administrator on 2016/10/28.
@@ -225,30 +223,30 @@ public class Utils {
         return 0;
     }
 
-    public static String getValueStringIfDataExist(XViewBody yiew, String text, String defaultValue) {
-
-        String keyname = text.substring(1);
-        if (yiew.data != null) {
-            String retValue = yiew.getData(keyname, defaultValue);
-            return retValue;
-        } else if (yiew.getRootComponet() != null && yiew.getRootComponet().data != null) {
-            String retValue = yiew.getRootComponet().getData(keyname, defaultValue);
-            return retValue;
-        } else {
-            return defaultValue;
-        }
-
-
-    }
-
-    public static int getValueIntIfDataExist(XViewBody yiew, String text, int defaultValue) {
-        if (text.startsWith("&")) {
-            String keyname = text.substring(1);
-            int data = yiew.getDataInt(keyname, defaultValue);
-            return data;
-        }
-        return defaultValue;
-    }
+//    public static String getValueStringIfDataExist(XViewBody yiew, String text, String defaultValue) {
+//
+//        String keyname = text.substring(1);
+//        if (yiew.data != null) {
+//            String retValue = yiew.getData(keyname, defaultValue);
+//            return retValue;
+//        } else if (yiew.getRootComponet() != null && yiew.getRootComponet().data != null) {
+//            String retValue = yiew.getRootComponet().getData(keyname, defaultValue);
+//            return retValue;
+//        } else {
+//            return defaultValue;
+//        }
+//
+//
+//    }
+//
+//    public static int getValueIntIfDataExist(XViewBody yiew, String text, int defaultValue) {
+//        if (text.startsWith("&")) {
+//            String keyname = text.substring(1);
+//            int data = yiew.getDataInt(keyname, defaultValue);
+//            return data;
+//        }
+//        return defaultValue;
+//    }
 
 
 }

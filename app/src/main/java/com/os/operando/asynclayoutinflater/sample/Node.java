@@ -10,7 +10,7 @@ public class Node {
     public String tag;
     public String text;
     public ArrayList<Node> child;
-//    public View viewCurrent;
+    //    public View viewCurrent;
 //    public ViewGroup viewParent;
-    HashMap<String,String> attr;
+    public HashMap<String, String> attr;
 }

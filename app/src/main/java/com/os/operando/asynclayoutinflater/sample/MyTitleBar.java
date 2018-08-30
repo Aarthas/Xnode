@@ -21,10 +21,18 @@ public class MyTitleBar extends BseViewComponent {
 
     @Override
     public void applyProperty(View hostview, String key, String value) {
-        if (key.equals("titleText"))
-        {
+        if (key.equals("titleText")) {
             TextView viewById = (TextView) hostview.findViewById(R.id.tv);
             viewById.setText(value);
+        } else if (key.equals("v_onclick")) {
+            TextView viewById = (TextView) hostview.findViewById(R.id.tv);
+            viewById.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
         }
+
     }
 }

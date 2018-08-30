@@ -2,7 +2,6 @@ package xjsonview;
 
 import android.widget.ImageView;
 
-import xjsonview.bean.XViewBase;
 
 
 /**
@@ -10,5 +9,5 @@ import xjsonview.bean.XViewBase;
  */
 
 public interface XViewImageAdapter {
-    void display(ImageView view, String src, XViewBase yiew);
+//    void display(ImageView view, String src, XViewBase yiew);
 }
