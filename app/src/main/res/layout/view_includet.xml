@@ -3,5 +3,12 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <include layout="@layout/view_sample_test" />
+    <include layout="@layout/view_sample_test"
+
+        />
+    <!--android:layout_marginLeft=""-->
+    <!--android:layout_marginRight=""-->
+    <!--android:layout_marginTop=""-->
+    <!--android:layout_marginBottom=""-->
+    <!--android:layout_margin=""-->
 </LinearLayout>

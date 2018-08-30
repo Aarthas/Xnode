@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#888235">
+    <TextView
+        color="#f03838"
+        text="Hello World!"
+        textSize="20"
+        width="match"
+        margin="10dp    30dp     20dp   40dp"
+        android:background="#fff"
+        android:paddingLeft="22dp"></TextView>
+</layout>
