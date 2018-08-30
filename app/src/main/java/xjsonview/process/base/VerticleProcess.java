@@ -17,20 +17,15 @@ import xjsonview.Utils;
  * Created by zhangyn on 17/4/5.
  */
 
-public class LinearLayoutProcess extends ViewProcess {
+public class VerticleProcess extends ViewProcess {
 
 
     @Override
     public View initView(Context context, ViewGroup parent, HashMap<String, String> map) {
         LinearLayout hostview = new LinearLayout(context);
+        hostview.setOrientation(LinearLayout.VERTICAL);
         ViewGroup.LayoutParams params = getLayoutParams(parent, map);
         hostview.setLayoutParams(params);
-
-        Set<String> keys = map.keySet();
-        for (String key : keys) {
-            String value = map.get(key);
-            applyProperty(hostview, key, value);
-        }
 
         return hostview;
     }
@@ -41,10 +36,5 @@ public class LinearLayoutProcess extends ViewProcess {
     public void applyProperty(View hostview, String key, String value) {
         super.applyProperty(hostview, key, value);
 
-//        LinearLayout.LayoutParams params1 = (LinearLayout.LayoutParams) params;
-//        if (yiew.layout_gravity != null)
-//            params1.gravity = (int) Utils.getValueInt(Gravity.class, yiew.layout_gravity.toUpperCase());
-//        if (yiew.weight != 0)
-//            params1.weight = yiew.weight;
     }
 }

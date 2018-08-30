@@ -22,11 +22,6 @@ public class FrameLayoutProcess extends ViewProcess {
         ViewGroup.LayoutParams params = getLayoutParams(parent, map);
         hostview.setLayoutParams(params);
 
-        Set<String> keys = map.keySet();
-        for (String key : keys) {
-            String value = map.get(key);
-            applyProperty(hostview, key, value);
-        }
 
         return hostview;
     }

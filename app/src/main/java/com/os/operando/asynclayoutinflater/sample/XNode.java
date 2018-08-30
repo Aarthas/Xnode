@@ -20,10 +20,10 @@ public class XNode {
         viewFactoryGlobal.registerComponent("mytitlebar", bseViewComponentClazz);
     }
 
-    public View createView(Node node, ViewGroup parent, Context context) {
-        View view = viewFactory.createView(node, parent, context);
+    public View createView(Node node, ViewGroup parent, Context context, ModelData modelData) {
+        View view = viewFactory.createView(node, parent, context,modelData);
         if (view == null) {
-            view = viewFactoryGlobal.createView(node, parent, context);
+            view = viewFactoryGlobal.createView(node, parent, context,modelData);
         }
         return view;
     }

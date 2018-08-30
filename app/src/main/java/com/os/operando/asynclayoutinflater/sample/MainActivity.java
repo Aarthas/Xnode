@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Finelog.init(true);
         super.onCreate(savedInstanceState);
-        XmlResourceParser xmlParser = getResources().getXml(R.xml.textview_diy);
+        XmlResourceParser xmlParser = getResources().getXml(R.xml.textview_model);
         Finelog.d(" start logXmlData");
         Node node = logXmlData(xmlParser);
         Finelog.d("logXmlData result");
@@ -50,10 +50,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+        ModelData modelData = new ModelData();
+        modelData.ti.setValue("aaa");
         XNode.getInstance().registerGlobalComponent("mytitlebar", MyTitleBar.class);
-        View view1 =   XNode.getInstance().createView(node, null, context);
+        View view1 =   XNode.getInstance().createView(node, null, context,modelData);
         setContentView(view1);
+        modelData.ti.setValue("vvv");
 //        Finelog.d("mytext");
 //        TextView mytext = (TextView) view1.findViewWithTag("mytext");
 //        mytext.setText("asf");
