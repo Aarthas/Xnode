@@ -144,10 +144,8 @@ public class XmlHeler {
             @Override
             public void call(Subscriber<? super Node> subscriber) {
                 try {
-
                     URL url = new URL(urlstr);
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-
                     //设置请求方式‘
                     connection.setRequestMethod("GET");
                     //设置请求连接超时的时间（优化）
