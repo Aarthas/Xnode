@@ -4,7 +4,7 @@
     android:background="#888235">
     <TextView
         color="#f03838"
-        bind-text="text1"
+        prop-text="aa"
         textSize="20"
         width="match"
         margin="10dp    30dp     20dp   40dp"

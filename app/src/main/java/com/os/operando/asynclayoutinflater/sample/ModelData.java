@@ -1,8 +1,11 @@
 package com.os.operando.asynclayoutinflater.sample;
 
-import com.a.MutableLiveData;
+import android.arch.lifecycle.MutableLiveData;
 
-public class ModelData {
-    MutableLiveData<String> text1 = new MutableLiveData<>();
-    MutableLiveData<String> edittext = new MutableLiveData<>();
+import com.fine.xnode.base.BaseModelData;
+import com.fine.xnode.livedata.MyLiveData;
+
+public class ModelData extends BaseModelData {
+    MyLiveData<String> text1 = new MyLiveData<>();
+    MyLiveData<String> edittext = new MyLiveData<>();
 }

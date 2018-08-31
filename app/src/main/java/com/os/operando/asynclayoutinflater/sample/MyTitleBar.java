@@ -6,9 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.fine.xnode.base.BseViewComponent;
+
 import java.util.HashMap;
 
-import xjsonview.process.base.BseViewComponent;
 
 public class MyTitleBar extends BseViewComponent {
     @Override

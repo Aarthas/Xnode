@@ -4,7 +4,7 @@
     <mytitlebar
         ref="mytitlebar"
         click="aaaa"
-        titleText="assets简单解析"></mytitlebar>
+        titleText="简单解析"></mytitlebar>
 
     <TextView
         bind-text="text1"
@@ -19,6 +19,6 @@
         hint="asd"
         data="edittext"
         width="match"></EditText>
-
-    <!--<import form="./textview.xml"></import>-->
+    <import form="textview.xml"   text1="asdqweqweqwe"></import>
+    <import form="textview2.xml"   aa="asdqweqweqwe"></import>
 </verticlelayout>

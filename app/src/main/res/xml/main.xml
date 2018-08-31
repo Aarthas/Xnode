@@ -20,5 +20,5 @@
         data="edittext"
         width="match"></EditText>
 
-    <!--<import form="./textview.xml"></import>-->
+    <import form="./textview.xml"></import>
 </verticlelayout>
