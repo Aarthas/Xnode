@@ -1,4 +1,4 @@
-package com.fine.xnode;
+package com.fine.xnode.util;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -8,6 +8,7 @@ import android.util.TypedValue;
 import android.view.ViewGroup;
 
 
+import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 
@@ -15,9 +16,22 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Created by Administrator on 2016/10/28.
  */
 
-public class XMeatureUtil {
+public class XNodeUtil {
 
+    public static ViewGroup.LayoutParams getLayoutParams(ViewGroup parent, HashMap<String, Object> attr) {
+        if (parent != null) {
+            String width = (String) attr.get("width");
+            String height = (String) attr.get("height");
+            attr.remove("width");
+            attr.remove("height");
+            ViewGroup.LayoutParams layoutParams = XNodeUtil.createLayoutParams(parent, width, height);
+            return layoutParams;
+        } else {
+            ViewGroup.LayoutParams layoutParams = XNodeUtil.createLayoutParams(parent, "match", "match");
+            return layoutParams;
+        }
 
+    }
     public static int dip2px(float dipValue)
 
     {
@@ -27,8 +41,8 @@ public class XMeatureUtil {
 
 
     public static ViewGroup.LayoutParams createLayoutParams(ViewGroup viewGroup, String width, String height) {
-        int widthint = (int) XMeatureUtil.meature(width);
-        int heightint = (int) XMeatureUtil.meature(height);
+        int widthint = (int) XNodeUtil.meature(width);
+        int heightint = (int) XNodeUtil.meature(height);
         ViewGroup.LayoutParams params = null;
         if (viewGroup != null) {
             try {
@@ -84,15 +98,15 @@ public class XMeatureUtil {
             Log.d("syb", "meatureWithUnit=" + meature);
             if (meature.endsWith("dp")) {
                 String substring = meature.substring(0, meature.length() - 2);
-                return XMeatureUtil.dip2px(Float.valueOf(substring));
+                return XNodeUtil.dip2px(Float.valueOf(substring));
             } else if (meature.endsWith("dip")) {
                 String substring = meature.substring(0, meature.length() - 3);
-                return XMeatureUtil.dip2px(Float.valueOf(substring));
+                return XNodeUtil.dip2px(Float.valueOf(substring));
             } else if (meature.endsWith("px")) {
                 String substring = meature.substring(0, meature.length() - 2);
                 return Float.valueOf(substring);
             } else {
-                return XMeatureUtil.dip2px(Float.valueOf(meature));
+                return XNodeUtil.dip2px(Float.valueOf(meature));
             }
         } catch (Exception e) {
             return -2;

@@ -3,15 +3,13 @@ package com.fine.xnode.viewprocess;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 
 import com.fine.log.Finelog;
-import com.fine.xnode.XMeatureUtil;
+import com.fine.xnode.util.XNodeUtil;
 import com.fine.xnode.base.BseViewComponent;
 
 import java.util.HashMap;
-import java.util.Set;
 
 
 /**
@@ -22,17 +20,9 @@ public class ViewProcess extends BseViewComponent {
 
 
     @Override
-    public View initView(Context context, ViewGroup parent, HashMap<String, String> map) {
-        View hostview = new TextView(context);
-        ViewGroup.LayoutParams params = getLayoutParams(parent, map);
-        hostview.setLayoutParams(params);
+    public View initView(Context context, ViewGroup parent, HashMap<String, Object> map) {
+        View hostview = new View(context);
 
-
-        Set<String> keys = map.keySet();
-        for (String key : keys) {
-            String value = map.get(key);
-            applyProperty(hostview, key, value);
-        }
 
         return hostview;
     }
@@ -51,7 +41,7 @@ public class ViewProcess extends BseViewComponent {
                 hostview.setTag(value);
                 break;
             case "padding":
-                int padding = (int) XMeatureUtil.meatureWithUnit(value);
+                int padding = (int) XNodeUtil.meatureWithUnit(value);
                 hostview.setPadding(padding, padding, padding, padding);
                 break;
             case "paddingLeft":
@@ -68,7 +58,7 @@ public class ViewProcess extends BseViewComponent {
                 break;
 
             case "background":
-                hostview.setBackgroundColor(XMeatureUtil.parseColor(value));
+                hostview.setBackgroundColor(XNodeUtil.parseColor(value));
                 break;
             case "visible":
 
@@ -91,13 +81,13 @@ public class ViewProcess extends BseViewComponent {
                 int marginleft = 0, marginRight = 0, marginTop = 0, marginBottom = 0;
                 if (split.length == 1) {
                     String s = split[0];
-                    marginleft = marginRight = marginTop = marginBottom = (int) XMeatureUtil.meatureWithUnit(s);
+                    marginleft = marginRight = marginTop = marginBottom = (int) XNodeUtil.meatureWithUnit(s);
                 }
                 else if (split.length == 4) {
-                    marginleft=  (int) XMeatureUtil.meatureWithUnit(split[0])  ;
-                    marginRight=  (int) XMeatureUtil.meatureWithUnit(split[2])  ;
-                    marginTop=  (int) XMeatureUtil.meatureWithUnit(split[1])  ;
-                    marginBottom=  (int) XMeatureUtil.meatureWithUnit(split[3])  ;
+                    marginleft=  (int) XNodeUtil.meatureWithUnit(split[0])  ;
+                    marginRight=  (int) XNodeUtil.meatureWithUnit(split[2])  ;
+                    marginTop=  (int) XNodeUtil.meatureWithUnit(split[1])  ;
+                    marginBottom=  (int) XNodeUtil.meatureWithUnit(split[3])  ;
                 }
 
                 ViewGroup.LayoutParams layoutParams = hostview.getLayoutParams();
@@ -123,7 +113,7 @@ public class ViewProcess extends BseViewComponent {
                 hostview.getPaddingRight(),
                 hostview.getPaddingBottom()
         };
-        padding[position] = (int) XMeatureUtil.meatureWithUnit(value);
+        padding[position] = (int) XNodeUtil.meatureWithUnit(value);
         hostview.setPadding(padding[0], padding[1], padding[2], padding[3]);
     }
 }

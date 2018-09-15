@@ -16,10 +16,8 @@ public class FrameLayoutProcess extends ViewProcess {
 
 
     @Override
-    public View initView(Context context, ViewGroup parent, HashMap<String, String> map) {
+    public View initView(Context context, ViewGroup parent, HashMap<String, Object> map) {
         FrameLayout hostview = new FrameLayout(context);
-        ViewGroup.LayoutParams params = getLayoutParams(parent, map);
-        hostview.setLayoutParams(params);
 
 
         return hostview;

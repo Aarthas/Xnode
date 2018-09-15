@@ -1,4 +1,4 @@
-package com.fine.xnode;
+package com.fine.xnode.util;
 
 import android.content.Context;
 import android.content.res.XmlResourceParser;
@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import android.util.Xml;
 
 import com.fine.log.Finelog;
+import com.fine.xnode.XNode;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;

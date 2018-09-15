@@ -20,11 +20,8 @@ import java.util.HashMap;
 public class EditTextProcess extends TextViewProcess {
 
 
-    public View initView(Context context, ViewGroup parent, HashMap<String, String> map) {
+    public View initView(Context context, ViewGroup parent, HashMap<String, Object> map) {
         AppCompatEditText hostview = new AppCompatEditText(context);
-        ViewGroup.LayoutParams params = getLayoutParams(parent, map);
-        hostview.setLayoutParams(params);
-
 
 
         return hostview;
@@ -42,7 +39,9 @@ public class EditTextProcess extends TextViewProcess {
             @Override
             public void onChanged(@Nullable String s) {
                 AppCompatEditText hostview = (AppCompatEditText) view;
-                hostview.setText(s);
+                Editable text = hostview.getText();
+                if (!text.toString().equals(s))
+                    hostview.setText(s);
             }
         });
     }
@@ -63,7 +62,11 @@ public class EditTextProcess extends TextViewProcess {
 
             @Override
             public void afterTextChanged(Editable s) {
-                livedata.justSetValue(s.toString());
+                String value = livedata.getValue();
+                if (!s.equals(value)) {
+                    livedata.setValue(s.toString());
+                }
+
             }
         });
     }

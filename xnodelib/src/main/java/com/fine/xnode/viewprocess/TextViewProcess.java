@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-import com.fine.xnode.XMeatureUtil;
+import com.fine.xnode.util.XNodeUtil;
 
 import java.util.HashMap;
 
@@ -19,10 +19,8 @@ import java.util.HashMap;
 public  class TextViewProcess extends ViewProcess {
 
 
-    public View initView(Context context, ViewGroup parent, HashMap<String, String> map) {
+    public View initView(Context context, ViewGroup parent, HashMap<String, Object> map) {
         TextView hostview = new TextView(context);
-        ViewGroup.LayoutParams params = getLayoutParams(parent, map);
-        hostview.setLayoutParams(params);
 
 
         return hostview;
@@ -38,7 +36,7 @@ public  class TextViewProcess extends ViewProcess {
                 textView.setText(value);
                 break;
             case "color":
-                textView.setTextColor(XMeatureUtil.parseColor(value));
+                textView.setTextColor(XNodeUtil.parseColor(value));
                 break;
             case "textSize":
                 float textSize = Float.parseFloat(value);

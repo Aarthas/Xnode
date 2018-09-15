@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 public class MyTitleBar extends BseViewComponent {
     @Override
-    public View initView(Context context, ViewGroup parent, HashMap<String, String> map) {
+    public View initView(Context context, ViewGroup parent, HashMap<String, Object> map) {
         LayoutInflater layoutInflater = getLayoutInflater(context);
         View inflate = layoutInflater.inflate(R.layout.titlebar, parent, false);
         return inflate;
